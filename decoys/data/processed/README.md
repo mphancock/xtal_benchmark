@@ -1,0 +1,1 @@
+The purpose of this folder is to store the processed data from the MD trajectories. 

@@ -1,0 +1,1 @@
+This folder contains all the necessary input data for running the MD simulation. 

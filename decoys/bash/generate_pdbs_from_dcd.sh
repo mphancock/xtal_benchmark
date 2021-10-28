@@ -25,11 +25,14 @@ NUM_LINES_TOTAL=$(wc -l "$DATA_DIR/processed/1ubq.decoy.all.pdb" | awk '{ print 
 NUM_ENTRY=$((NUM_LINES_TOTAL / NUM_LINES_PER_ENTRY))
 for i in $(seq 0 $((NUM_ENTRY-1)))
   do
-    sed -n '1,1p;2q' "$DATA_DIR/processed/1ubq.decoy.all.pdb" >"$DATA_DIR/processed/pdb/1ubq.decoy.$i.pdb"
+    sed -n '1,1p;2q' "$DATA_DIR/processed/1ubq.decoy.all.pdb" >"$DATA_DIR/processed/1ubq.decoy.$i.pdb"
     START=$((2+i*NUM_LINES_PER_ENTRY))
     END=$((2+(i+1)*NUM_LINES_PER_ENTRY))
     END_MINUS=$((END-1))
 
-    sed -n "$START,$END_MINUS p;$END q" "$DATA_DIR/processed/1ubq.decoy.all.pdb" >>"$DATA_DIR/processed/pdb/1ubq.decoy.$i.pdb"
+    sed -n "$START,$END_MINUS p;$END q" "$DATA_DIR/processed/1ubq.decoy.all.pdb" >>"$DATA_DIR/processed/1ubq.decoy.$i.pdb"
   done
+
+rm "$DATA_DIR/processed/1ubq.decoy.all.pdb"
+
 

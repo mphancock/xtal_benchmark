@@ -1,0 +1,1 @@
+The purpose of this folder is to store the output from MD simulations as well as log files. 
