@@ -1,0 +1,7 @@
+source leaprc.protein.ff14SB
+source leaprc.water.spce
+ubiquitin = loadPdb "../data/1ubq.amber.pdb"
+solvateOct ubiquitin SPCBOX 14.0
+addIons ubiquitin Cl- 4
+saveAmberParm ubiquitin topology.top coords.crd
+quit
